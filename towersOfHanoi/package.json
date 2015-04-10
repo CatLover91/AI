@@ -1,0 +1,12 @@
+{
+  "name": "AI-Proj-1",
+  "version": "0.0.1",
+  "description": "SImple search algorithm implementation",
+  "dependencies": {
+    "d3": "3.4.*",
+  }
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> ce9db22d2d898472aeb976b0b3f391c6bda76890

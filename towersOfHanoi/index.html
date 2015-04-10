@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="utf-8">
+        <title>Graph of Towers of Hanoi States</title>
+        <link rel="stylesheet" href="d3-process-map/bootstrap.css">
+        <link rel="stylesheet" href="d3-process-map/style.css">
+        <link rel="stylesheet" href="d3-process-map/svg.css">
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+        <div class="unsupported-browser">
+            This website does not fully support your browser.  Please get a
+            better browser (Firefox or <a href="/chrome/">Chrome</a>, or if you
+            must use Internet Explorer, make it version 9 or greater).
+        </div>
+        <![endif]-->
+        <div id="split-container">
+            <a class="btn btn-default nav-button" id="nav-list" href="d3-process-map/list.php?dataset=default">
+                View list
+            </a>
+            <div id="graph-container">
+                <div id="graph"></div>
+            </div>
+            <div id="docs-container">
+<<<<<<< HEAD
+                <a id="docs-close" href="#">&times;</a>
+>>>>>>> ce9db22d2d898472aeb976b0b3f391c6bda76890
+                <div id="docs" class="docs"></div>
+            </div>
+        </div>
+        <script src="d3-process-map/jquery/jquery-1.10.2.min.js"></script>
+        <script src="d3-process-map/d3/d3.v3.min.js"></script>
+        <script src="d3-process-map/colorbrewer.js"></script>
+        <script src="d3-process-map/lib/geometry.js"></script>
+        <script>
+            var config = {
+              "title" : "Graph of Towers of Hanoi States",
+                  "graph" : {
+                  "linkDistance" : 150,
+                  "charge"       : -400,
+                    "height"       : 800,
+                    "numColors"    : 3,
+                    "labelPadding" : {
+                        "left"   : 3,
+                        "right"  : 3,
+                        "top"    : 2,
+                        "bottom" : 2
+                    },
+                    "labelMargin" : {
+                        "left"   : 3,
+                        "right"  : 3,
+                        "top"    : 2,
+                        "bottom" : 2
+                    },
+                    "ticksWithoutCollisions" : 50
+                },
+                "types" : {
+                    "state" : {
+                        "short" : "States",
+                        "long"  : "THe seperate states for Towers of Hanoi"
+                    }
+                },
+                "constraints" : [
+                    {
+                        "has"    : { "type" : "state" },
+                        "type"   : "position",
+                        "x"      : 0.2,
+                        "y"      : 0.2,
+                        "weight" : 0.7
+                    }
+                ]
+            };
+        </script>
+        <script src="d3-process-map/script.js"></script>
+    </body>
+<<<<<<< HEAD
+</html>
+>>>>>>> ce9db22d2d898472aeb976b0b3f391c6bda76890
