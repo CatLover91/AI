@@ -1,4 +1,3 @@
-//scan in written portion
 
 var math = require('mathjs');
 /*2. Ranking using Genetic Algorithm
@@ -13,7 +12,6 @@ Let’s interpret a, b, c, d as names of football teams and P(x>y) is the probab
 	P(abcd) = P(a>b)P(b>c)P(c>d) and
 	P(bacd) = (1-P(a>b))P(a>c)P(c>d)
 	The most reasonable ranking is the one yielding maximum probability.
-
 Task 1. (Genetic Algorithm Design) (20 pts) 
 Design a genetic algorithm to obtain an optimal ranking. Specify your setup of the genetic algorithm, including the fitness function, 
 mutation operator, and crossover operator.
@@ -53,7 +51,9 @@ Gene.prototype.mutate = function(mutationchance) {
                 newval = math.floor(math.random() * this.teamnum);
             }
             for (var q = 0; q < this.teamnum; q++) {
-                if (this.gstring[q] === newval) this.gstring[q] === this.gstring[i];
+                if (this.gstring[q] === newval) {
+                  this.gstring[q] = this.gstring[i];
+                }
             }
             this.gstring[i] = newval; //this.gstring(0, i) + newval.toString() + this.gstring(i + 1);
         }
@@ -125,7 +125,7 @@ Population.prototype.runAround = function() { //WHYYYY you wanna give me tha run
         counter += this.genes[i].fitness();
     }
 
-    for (var i = 0; i < this.genes.length; i++) {
+    for (i = 0; i < this.genes.length; i++) {
         if (i === 0) {
             fitness[i] = fitness[i] / counter;
         }
@@ -136,7 +136,7 @@ Population.prototype.runAround = function() { //WHYYYY you wanna give me tha run
     //match for crossover
     var crossOverMatch = [];
     var whoIsLucky = 0;
-    for (var i = 0; i < this.genes.length; i++) {
+    for (i = 0; i < this.genes.length; i++) {
         whoIsLucky = math.random();
         for (var j = 0; j < fitness.length; j++) {
             if (whoIsLucky < fitness[j] && (j === 0 || (whoIsLucky > fitness[j - 1]))) {
@@ -146,14 +146,14 @@ Population.prototype.runAround = function() { //WHYYYY you wanna give me tha run
     }
     console.log(crossOverMatch.toString());
     // perform crossover
-    for (var i = 0; i < fitness.length; i++) {
+    for (i = 0; i < fitness.length; i++) {
         if (math.random() < this.CR) {
             this.genes[crossOverMatch[i]].gstring = this.genes[i].cross(this.genes[crossOverMatch[i]].gstring);
         }
     }
 
     // mutate
-    for (var i = 0; i < this.genes.length; i++) {
+    for (i = 0; i < this.genes.length; i++) {
         this.genes[i].mutate();
     }
 };
